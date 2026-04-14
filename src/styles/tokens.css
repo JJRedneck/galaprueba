@@ -1,0 +1,88 @@
+:root {
+  /* button/primary */
+  --button-primary-background-default: #006dff;
+  --button-primary-background-hover: #0155ca;
+  --button-primary-background-pressed: #00419e;
+  --button-primary-background-active: #014bb4;
+  --button-primary-background-disabled: #9eccff;
+  --button-primary-content-default: #ffffff;
+  --button-primary-content-hover: #ffffff;
+  --button-primary-content-active: #ffffff;
+  --button-primary-content-disabled: #ffffff;
+
+  /* button/secondary */
+  --button-secondary-background-default: #ffffff;
+  --button-secondary-background-hover: #cce2ff;
+  --button-secondary-background-pressed: #b5d7ff;
+  --button-secondary-background-disabled: #ffffff;
+  --button-secondary-content-default: #006dff;
+  --button-secondary-content-hover: #0155ca;
+  --button-secondary-content-disabled: #9eccff;
+  --button-secondary-border-default: #006dff;
+  --button-secondary-border-hover: #0155ca;
+  --button-secondary-border-pressed: #00419e;
+  --button-secondary-border-disabled: #9eccff;
+
+  /* button/tertiary */
+  --button-tertiary-background-hover: #cce2ff;
+  --button-tertiary-background-pressed: #b5d7ff;
+  --button-tertiary-content-default: #006dff;
+  --button-tertiary-content-hover: #0155ca;
+  --button-tertiary-content-disabled: #9eccff;
+
+  /* action */
+  --action-content-default: #006dff;
+  --action-content-hover: #0155ca;
+
+  /* link */
+  --link-1: #0163e8;
+
+  /* basic */
+  --basic-content-default: #000000;
+  --basic-content-soft: #646464;
+  --basic-content-brand-primary: #006dff;
+  --basic-content-inverse: #ffffff;
+  --basic-background-soft-2: #eeeeee;
+
+  /* Component */
+  --Component-text-to-element-gap-md: 8px;
+  --Component-text-to-element-gap-xs: 4px;
+  --Component-horizontal-padding-xl: 16px;
+  --Component-horizontal-padding-lg: 12px;
+  --Component-horizontal-padding-xs: 4px;
+  --Component-vertical-padding-lg: 12px;
+  --Component-vertical-padding-xs: 4px;
+  --Component-border-width: 1px;
+
+  /* Button */
+  --Button-border-radius: 50px;
+  --Button-border-width: 1px;
+
+  /* effect */
+  --effect-focus-color: #0155ca;
+  --effect-focus-contrast: #ffffff;
+  --effect-shadow-high: #0000001a;
+
+  /* label/md/default  &  text/md/default */
+  --label-md-default-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --label-md-default-size: 16px;
+  --text-md-default-weight: 400;
+  --Label-MD-Default-line-height: 24px;
+
+  /* label/lg/default  &  text/lg/default */
+  --label-lg-default-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --label-lg-default-size: 18px;
+  --text-lg-default-weight: 400;
+  --Label-LG-Default-line-height: 27px;
+
+  /* label/sm/default */
+  --label-sm-default-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --label-sm-default-size: 14px;
+  --Label-SM-Default-line-height: 20px;
+
+  /* text/sm/default */
+  --text-sm-default-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --text-sm-default-size: 14px;
+  --text-sm-default-weight: 400;
+  --text-sm-default-line-height: 21px;
+}
