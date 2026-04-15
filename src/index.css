@@ -19,3 +19,14 @@ body {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+.fm-checkbox-row:hover .fm-checkbox-unchecked {
+  background: var(--basic-background-hover);
+  border-color: var(--basic-border-hover);
+}
+
+.fm-icon-24 > svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}

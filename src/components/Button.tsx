@@ -110,6 +110,22 @@ export function Button({
   const ariaPressed = category === 'toggle' ? pressed : undefined;
   const loadingColor = category === 'primary' || (category === 'toggle' && pressed) ? 'white' : 'blue';
 
+  const iconSlot = (node: ReactNode) => (
+    <span
+      className="fm-icon-24"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '24px',
+        height: '24px',
+        flexShrink: 0,
+      }}
+    >
+      {node}
+    </span>
+  );
+
   return (
     <button
       className={classes}
@@ -123,12 +139,12 @@ export function Button({
       {loading ? (
         <ProgressIndicator size="sm" color={loadingColor} />
       ) : isIconOnly ? (
-        icon
+        iconSlot(icon)
       ) : (
         <>
-          {iconLeft}
+          {iconLeft && iconSlot(iconLeft)}
           {children}
-          {iconRight}
+          {iconRight && iconSlot(iconRight)}
         </>
       )}
     </button>

@@ -1,7 +1,8 @@
-import { Button } from './components/Button';
-import { InfoLabel } from './components/InfoLabel';
-import { Link } from './components/Link';
-import { ProgressIndicator } from './components/ProgressIndicator';
+import { Button } from '../components/Button';
+import { Checkbox } from '../components/Checkbox';
+import { InfoLabel } from '../components/InfoLabel';
+import { Link } from '../components/Link';
+import { ProgressIndicator } from '../components/ProgressIndicator';
 import { useState } from 'react';
 
 function PlusIcon() {
@@ -23,6 +24,7 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 
 function App() {
   const [toggled, setToggled] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   return (
     <div className="min-h-screen p-10">
@@ -76,6 +78,14 @@ function App() {
 
       <h2 className="text-xl font-medium mt-8 mb-2">With icons (text buttons)</h2>
       <Row label="MD"><Button iconLeft={<PlusIcon />}>Lorem</Button><Button category="secondary" iconRight={<PlusIcon />}>Lorem</Button></Row>
+
+      <h1 className="text-3xl font-semibold mt-16 mb-8">Checkbox</h1>
+      <Row label="Default"><Checkbox label="Text" checked={checked} onChange={(e) => setChecked(e.target.checked)} /></Row>
+      <Row label="Selected"><Checkbox label="Text" checked readOnly /></Row>
+      <Row label="Indeterminate"><Checkbox label="Text" indeterminate readOnly /></Row>
+      <Row label="Disabled off"><Checkbox label="Text" disabled /></Row>
+      <Row label="Disabled on"><Checkbox label="Text" disabled checked readOnly /></Row>
+      <Row label="Required"><Checkbox label="Text" errorMessage="Required." /></Row>
 
       <h1 className="text-3xl font-semibold mt-16 mb-8">Link</h1>
       <Row label="LG"><Link href="#" size="lg">Link</Link><Link href="#" size="lg" iconLeft={<PlusIcon />}>Link</Link><Link href="#" size="lg" iconRight={<PlusIcon />}>Link</Link><Link href="#" size="lg" iconTop={<PlusIcon />}>Link</Link></Row>

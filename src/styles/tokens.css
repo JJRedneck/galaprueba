@@ -33,6 +33,9 @@
   /* action */
   --action-content-default: #006dff;
   --action-content-hover: #0155ca;
+  --action-content-selected: #ffffff;
+  --action-background-selected: #006dff;
+  --action-background-disabled: #cce2ff;
 
   /* link */
   --link-1: #0163e8;
@@ -40,19 +43,30 @@
   /* basic */
   --basic-content-default: #000000;
   --basic-content-soft: #646464;
+  --basic-content-disabled: #7c7c7c;
   --basic-content-brand-primary: #006dff;
   --basic-content-inverse: #ffffff;
+  --basic-background-default: #ffffff;
+  --basic-background-hover: #fafafa;
+  --basic-background-disabled: #fafafa;
   --basic-background-soft-2: #eeeeee;
+  --basic-border-default: #919191;
+  --basic-border-hover: #444444;
+  --basic-border-disabled: #e0e0e0;
 
   /* Component */
+  --Component-text-to-element-gap-lg: 12px;
   --Component-text-to-element-gap-md: 8px;
   --Component-text-to-element-gap-xs: 4px;
   --Component-horizontal-padding-xl: 16px;
   --Component-horizontal-padding-lg: 12px;
+  --Component-horizontal-padding-md: 8px;
   --Component-horizontal-padding-xs: 4px;
   --Component-vertical-padding-lg: 12px;
+  --Component-vertical-padding-md: 8px;
   --Component-vertical-padding-xs: 4px;
   --Component-border-width: 1px;
+  --Component-border-radius: 4px;
 
   /* Button */
   --Button-border-radius: 50px;
