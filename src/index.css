@@ -3,13 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: var(--label-md-family);
-  background: #f5f5f7;
-  color: #111;
-}
-
 .fm-link {
   color: var(--link-1);
   text-decoration: none;

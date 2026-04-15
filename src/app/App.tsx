@@ -4,6 +4,7 @@ import { InfoLabel } from '../components/InfoLabel';
 import { Link } from '../components/Link';
 import { ProgressIndicator } from '../components/ProgressIndicator';
 import { useState } from 'react';
+import './App.css';
 
 function PlusIcon() {
   return (
