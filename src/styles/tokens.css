@@ -20,6 +20,7 @@
   --button-secondary-content-disabled: #9eccff;
   --button-secondary-border-default: #006dff;
   --button-secondary-border-hover: #0155ca;
+  --button-secondary-border-active: #014bb4;
   --button-secondary-border-pressed: #00419e;
   --button-secondary-border-disabled: #9eccff;
 
@@ -34,6 +35,8 @@
   --action-content-default: #006dff;
   --action-content-hover: #0155ca;
   --action-content-selected: #ffffff;
+  --action-content-disabled: #9eccff;
+  --action-background-hover: #d8e9ff;
   --action-background-selected: #006dff;
   --action-background-disabled: #cce2ff;
 
@@ -49,24 +52,67 @@
   --basic-background-default: #ffffff;
   --basic-background-hover: #fafafa;
   --basic-background-disabled: #fafafa;
+  --basic-background-active: #ffffff;
+  --basic-background-alternative: #d8e9ff;
+  --basic-background-soft-1: #fafafa;
   --basic-background-soft-2: #eeeeee;
+  --basic-background-commercial: #ccecda;
+  --basic-elevation-overlay: #ffffff;
+  --basic-elevation-floating: #ffffff;
+  --basic-elevation-standard: #ffffff;
   --basic-border-default: #919191;
   --basic-border-hover: #444444;
+  --basic-border-active: #006dff;
+  --basic-border-soft: #e0e0e0;
   --basic-border-disabled: #e0e0e0;
+  --basic-border-brand-primary: #006dff;
+  --basic-border-commercial: #9cc3ad;
+
+  /* feedback */
+  --feedback-border-error: #be0028;
+  --feedback-border-success: #008626;
+  --feedback-border-warning: #c78616;
+  --feedback-border-warning-soft: #fbca8b;
+  --feedback-content-error: #be0028;
+  --feedback-content-success: #008626;
+  --feedback-content-warning: #c78616;
+  --feedback-background-default: #e0e0e0;
+  --feedback-background-error: #be0028;
+  --feedback-background-success: #008626;
+  --feedback-background-info-soft: #d8e9ff;
+  --feedback-background-warning-soft: #fbca8b;
 
   /* Component */
+  --Component-text-to-element-gap-xl: 16px;
   --Component-text-to-element-gap-lg: 12px;
   --Component-text-to-element-gap-md: 8px;
   --Component-text-to-element-gap-xs: 4px;
+  --Component-horizontal-padding-3xl: 48px;
+  --Component-horizontal-padding-2xl: 24px;
   --Component-horizontal-padding-xl: 16px;
   --Component-horizontal-padding-lg: 12px;
   --Component-horizontal-padding-md: 8px;
   --Component-horizontal-padding-xs: 4px;
+  --Component-vertical-padding-3xl: 48px;
+  --Component-vertical-padding-2xl: 24px;
+  --Component-vertical-padding-xl: 16px;
   --Component-vertical-padding-lg: 12px;
   --Component-vertical-padding-md: 8px;
+  --Component-vertical-padding-sm: 6px;
   --Component-vertical-padding-xs: 4px;
   --Component-border-width: 1px;
   --Component-border-radius: 4px;
+
+  /* Elements */
+  --Elements-minimum: 8px;
+  --Elements-base: 16px;
+  --Elements-large: 24px;
+  --Elements-extralarge: 32px;
+
+  /* Border-radius */
+  --Border-radius-sm: 4px;
+  --Border-radius-md: 8px;
+  --Border-radius-lg: 16px;
 
   /* Button */
   --Button-border-radius: 50px;
@@ -75,13 +121,37 @@
   /* effect */
   --effect-focus-color: #0155ca;
   --effect-focus-contrast: #ffffff;
+  --effect-shadow-soft: #0000000a;
+  --effect-shadow-medium: #00000014;
   --effect-shadow-high: #0000001a;
+  --effect-shadow-strong: #00000029;
+  --effect-scrim: #00000066;
+  --effect-gradient-skeleton-start: #e0e0e0;
+  --effect-gradient-skeleton-end: #eeeeee;
 
   /* label/md/default  &  text/md/default */
   --label-md-default-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
   --label-md-default-size: 16px;
   --text-md-default-weight: 400;
   --Label-MD-Default-line-height: 24px;
+
+  /* label/md/strong */
+  --label-md-strong-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --label-md-strong-size: 16px;
+  --text-md-strong-weight: 700;
+  --Label-MD-Strong-line-height: 24px;
+
+  /* title/md/strong */
+  --title-md-strong-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --title-md-strong-size: 20px;
+  --title-md-strong-weight: 600;
+  --title-md-strong-line-height: 24px;
+
+  /* title/sm/strong */
+  --title-sm-strong-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --title-sm-strong-size: 18px;
+  --title-sm-strong-weight: 600;
+  --title-sm-strong-line-height: 27px;
 
   /* label/lg/default  &  text/lg/default */
   --label-lg-default-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;

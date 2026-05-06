@@ -4,3 +4,42 @@ body {
   background: #f5f5f7;
   color: #111;
 }
+
+.showcase {
+  min-height: 100vh;
+  padding: 40px;
+}
+.showcase h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 64px 0 32px;
+}
+.showcase h1:first-of-type { margin-top: 0; }
+.showcase h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 32px 0 8px;
+}
+.showcase-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+.showcase-row-label {
+  width: 128px;
+  font-size: 14px;
+  color: #6b7280;
+}
+.showcase-row-items {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.showcase-dark-swatch {
+  background: var(--basic-content-default);
+  padding: 8px;
+  border-radius: 4px;
+}

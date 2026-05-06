@@ -6,41 +6,43 @@ How Figma Make should write code on top of this kit.
 
 - React 18+ (functional components, hooks)
 - TypeScript
-- Tailwind CSS for layout/utilities; design-token utilities are mapped in `tailwind.config.js`
-- CSS variables for colors, spacing, radii, typography (see `tokens.md`)
+- Plain CSS — design tokens exposed as CSS variables (see `tokens.md`)
+- No Tailwind, no CSS-in-JS
 
 ## Import order
 
 1. React + standard libs
 2. Third-party
-3. Kit components (`@figma-make-kit/core`)
+3. Kit components (`@galatea-gamma/core`)
 4. Local components
 5. Local styles
 
 ```tsx
 import { useState } from 'react';
-import { Button, Checkbox } from '@figma-make-kit/core';
+import { Button, Checkbox } from '@galatea-gamma/core';
 import { MyCard } from './MyCard';
 ```
 
 ## Layout
 
-- **Use Tailwind utilities for layout** (`flex`, `grid`, `gap-*`, `p-*`).
-- **Use the `Component-*` spacing tokens** for gaps that match the design system rhythm: `gap-Component-text-to-element-gap-md`, `p-Component-horizontal-padding-lg`, etc.
+- **Use plain CSS** (flex/grid, padding, gap) in stylesheets or inline `style={{}}`.
+- **Use the `--Component-*` spacing variables** for gaps that match the design system rhythm: `gap: var(--Component-text-to-element-gap-md)`, `padding: var(--Component-horizontal-padding-lg)`.
 - **Don't introduce arbitrary pixel values** when a token exists.
 
 ## Color
 
-- **Never hardcode hex.** Use a token: `bg-basic-background-default`, `text-basic-content-default`, `var(--link-1)`, etc.
-- **For new ad-hoc surfaces**, prefer `--basic-background-default` + `--basic-border-default`.
+- **Never hardcode hex.** Use a token via CSS var: `color: var(--basic-content-default)`, `background: var(--basic-background-default)`, `color: var(--link-1)`.
+- **For ad-hoc surfaces**, prefer `--basic-background-default` + `--basic-border-default`.
 
 ## Typography
 
-Use the typography utilities together (font + size set the family, size, line-height, weight in one go):
+The kit ships four typography utility classes (each bundles family + size + line-height + weight):
 
 ```tsx
-<p className="font-label-md-default text-label-md-default">Body text</p>
+<p className="fm-font-label-md">Body text</p>
 ```
+
+Available: `fm-font-label-lg`, `fm-font-label-md`, `fm-font-label-sm`, `fm-font-text-sm`.
 
 ## Accessibility
 
@@ -51,7 +53,7 @@ Use the typography utilities together (font + size set the family, size, line-he
 
 ## Don'ts
 
-- **Don't restyle kit components.** No `className` overrides for color, padding, border, radius. Layout-affecting classes (`mr-2`, `flex-1`) are fine.
+- **Don't restyle kit components.** No `className` overrides for color, padding, border, radius. Layout-affecting styles (`marginRight`, `flex: 1`) are fine via `style={{}}` or an external class.
 - **Don't recreate components.** If you need a button, use `<Button>`. If a variant is missing, ask before extending.
-- **Don't write CSS-in-JS (`styled-components`, Emotion).** The kit uses Tailwind + CSS variables; stick with that.
+- **Don't write CSS-in-JS (`styled-components`, Emotion) or bring in Tailwind.** The kit is plain CSS + CSS variables — stick with that.
 - **Don't add new colors.** All colors come from the Foundations library.

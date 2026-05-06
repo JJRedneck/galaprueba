@@ -38,7 +38,7 @@ export function ProgressIndicator({
 
   return (
     <svg
-      className={`animate-spin ${className}`}
+      className={`fm-spin ${className}`.trim()}
       width={px}
       height={px}
       viewBox={`0 0 ${px} ${px}`}

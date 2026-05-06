@@ -5,7 +5,7 @@ Pill-shaped button with six categories and two sizes. Always use `<Button>` for 
 ## Import
 
 ```tsx
-import { Button } from '@figma-make-kit/core';
+import { Button } from '@galatea-gamma/core';
 ```
 
 ## Props

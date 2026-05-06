@@ -5,7 +5,7 @@ Inline text link. Use for navigation or any inline anchor — never style a raw 
 ## Import
 
 ```tsx
-import { Link } from '@figma-make-kit/core';
+import { Link } from '@galatea-gamma/core';
 ```
 
 ## Props

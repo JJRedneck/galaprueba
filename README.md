@@ -5,10 +5,13 @@ React + Tailwind component library that mirrors the Core Components design syste
 ## Components
 
 - `Button` — primary, secondary, tertiary, icon, floating, toggle (sm/md)
-- `Checkbox` — with label, indeterminate, error/required state
-- `Link` — sm / md / lg, optional left/right/top icons
+- `Dropdown` — single-select dropdown with floating label, error/disabled states
+- `DropdownItem` — row used inside a `Dropdown` listbox (option / selected / no-results)
+- `Input` — text/number/date/password/textarea with floating label, validation states, password visibility toggle
 - `InfoLabel` — head + body, sm / xs / xxs
+- `Link` — sm / md / lg, optional left/right/top icons
 - `ProgressIndicator` — sm / md, blue / white / black
+- `QuickAction` — circular icon + label tappable action (xs / xl)
 
 ## Local development
 
@@ -21,8 +24,17 @@ npm run build        # produces dist/ (lib bundle + types + styles)
 ## Consume the built library
 
 ```ts
-import { Button, Checkbox, Link, InfoLabel, ProgressIndicator } from '@figma-make-kit/core';
-import '@figma-make-kit/core/styles.css';
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  Input,
+  InfoLabel,
+  Link,
+  ProgressIndicator,
+  QuickAction,
+} from '@galatea-gamma/core';
+import '@galatea-gamma/core/styles.css';
 ```
 
 The `styles.css` import ships the design tokens (CSS variables) and Tailwind utilities the components rely on. Without it the components render unstyled.
@@ -44,7 +56,7 @@ This repo is structured to be uploaded as-is:
 |---|---|
 | Library entry | `src/index.ts` |
 | Built bundle | `dist/index.js` + `dist/index.d.ts` + `dist/styles.css` |
-| Package config | `package.json` (scope `@figma-make-kit/core`, peer deps for React) |
+| Package config | `package.json` (scope `@galatea-gamma/core`, peer deps for React) |
 | Vite config | `vite.config.ts` (lib mode) |
 | Guidelines for the AI | `guidelines/*.md` (one per component + tokens + coding style) |
 

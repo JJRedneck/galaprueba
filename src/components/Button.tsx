@@ -15,73 +15,28 @@ export type ButtonProps = {
   children?: ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const base =
-  'inline-flex items-center justify-center ' +
-  'gap-Component-text-to-element-gap-md ' +
-  'rounded-Button-border-radius ' +
-  'font-label-md-default text-label-md-default ' +
-  'outline-none disabled:cursor-not-allowed ' +
-  'focus-visible:shadow-focus-outset';
-
 const iconOnlyCategories: Category[] = ['icon', 'floating'];
 
-function sizePadding(category: Category, size: Size): string {
+function sizeClass(category: Category, size: Size): string {
   if (iconOnlyCategories.includes(category)) {
-    return size === 'md'
-      ? 'p-Component-horizontal-padding-lg'
-      : 'p-Component-horizontal-padding-xs';
+    return size === 'md' ? 'fm-btn--icon-md' : 'fm-btn--icon-sm';
   }
-  const py =
-    size === 'md'
-      ? 'py-Component-vertical-padding-lg'
-      : 'py-Component-vertical-padding-xs';
-  return `${py} px-Component-horizontal-padding-xl`;
+  return size === 'md' ? 'fm-btn--md' : 'fm-btn--sm';
 }
 
-const primaryClasses = [
-  'bg-button-primary-background-default text-button-primary-content-default',
-  'hover:bg-button-primary-background-hover hover:text-button-primary-content-hover',
-  'active:bg-button-primary-background-pressed',
-  'disabled:bg-button-primary-background-disabled disabled:text-button-primary-content-disabled',
-].join(' ');
-
-const secondaryClasses = [
-  'bg-button-secondary-background-default text-button-secondary-content-default',
-  'border-Button-border-width border-button-secondary-border-default',
-  'hover:bg-button-secondary-background-hover hover:text-button-secondary-content-hover hover:border-button-secondary-border-hover',
-  'active:bg-button-secondary-background-pressed active:border-button-secondary-border-pressed',
-  'disabled:bg-button-secondary-background-disabled disabled:text-button-secondary-content-disabled disabled:border-button-secondary-border-disabled',
-].join(' ');
-
-const tertiaryClasses = [
-  'bg-transparent text-button-tertiary-content-default',
-  'hover:bg-button-tertiary-background-hover hover:text-button-tertiary-content-hover',
-  'active:bg-button-tertiary-background-pressed',
-  'disabled:text-button-tertiary-content-disabled',
-].join(' ');
-
-const floatingClasses = [
-  'bg-button-secondary-background-default text-action-content-default',
-  'border-Button-border-width border-button-secondary-border-default',
-  'shadow-elevation-raised',
-  'hover:bg-button-secondary-background-hover hover:border-button-secondary-border-hover',
-  'active:bg-button-secondary-background-pressed active:border-button-secondary-border-pressed',
-].join(' ');
-
-function categoryClasses(category: Category, pressed: boolean): string {
+function variantClass(category: Category, pressed: boolean): string {
   switch (category) {
     case 'primary':
-      return primaryClasses;
+      return 'fm-btn--primary';
     case 'secondary':
-      return secondaryClasses;
+      return 'fm-btn--secondary';
     case 'tertiary':
-      return tertiaryClasses;
     case 'icon':
-      return tertiaryClasses;
+      return 'fm-btn--tertiary';
     case 'floating':
-      return floatingClasses;
+      return 'fm-btn--floating';
     case 'toggle':
-      return pressed ? primaryClasses : tertiaryClasses;
+      return pressed ? 'fm-btn--primary' : 'fm-btn--tertiary';
   }
 }
 
@@ -100,12 +55,9 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const isIconOnly = iconOnlyCategories.includes(category);
-  const classes = [
-    base,
-    sizePadding(category, size),
-    categoryClasses(category, pressed),
-    className,
-  ].join(' ');
+  const classes = ['fm-btn', sizeClass(category, size), variantClass(category, pressed), className]
+    .filter(Boolean)
+    .join(' ');
 
   const ariaPressed = category === 'toggle' ? pressed : undefined;
   const loadingColor = category === 'primary' || (category === 'toggle' && pressed) ? 'white' : 'blue';

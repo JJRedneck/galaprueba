@@ -5,7 +5,7 @@ Spinning arc loader. Use for indeterminate loading. For determinate progress (wi
 ## Import
 
 ```tsx
-import { ProgressIndicator } from '@figma-make-kit/core';
+import { ProgressIndicator } from '@galatea-gamma/core';
 ```
 
 ## Props

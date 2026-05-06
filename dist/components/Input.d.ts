@@ -1,0 +1,26 @@
+import type { ChangeEvent, CSSProperties, InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from 'react';
+type InputType = 'text' | 'number' | 'date' | 'password' | 'textarea';
+type InputState = 'default' | 'success' | 'error' | 'alert';
+type NativeInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size' | 'onChange' | 'value' | 'defaultValue'>;
+type NativeTextareaProps = Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange' | 'value' | 'defaultValue'>;
+export type InputProps = {
+    type?: InputType;
+    label?: string;
+    value?: string;
+    defaultValue?: string;
+    placeholder?: string;
+    state?: InputState;
+    message?: ReactNode;
+    iconLeft?: ReactNode;
+    readOnly?: boolean;
+    disabled?: boolean;
+    rows?: number;
+    onClear?: () => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    className?: string;
+    style?: CSSProperties;
+    id?: string;
+    name?: string;
+} & Omit<NativeInputProps, 'className' | 'style' | 'id' | 'name' | 'placeholder' | 'readOnly' | 'disabled'> & Omit<NativeTextareaProps, 'className' | 'style' | 'id' | 'name' | 'placeholder' | 'readOnly' | 'disabled' | 'rows'>;
+export declare function Input({ type, label, value: controlledValue, defaultValue, placeholder, state, message, iconLeft, readOnly, disabled, rows, onClear, onChange, onFocus, onBlur, className, style, id, name, ...rest }: InputProps): import("react/jsx-runtime").JSX.Element;
+export {};
